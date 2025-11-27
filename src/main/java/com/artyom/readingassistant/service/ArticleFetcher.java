@@ -65,11 +65,14 @@ public class ArticleFetcher {
             // Title extraction: prefer <title>, then og:title meta
             String title = extractTitle(doc).orElse("(no title)");
 
+
             // Try several heuristics to find the main article node
             String text = extractMainText(doc);
 
+
             // Trim and normalize whitespace
             text = normalizeText(text);
+
 
             return new ArticleResult(url, title, text);
         } catch (Exception e) {

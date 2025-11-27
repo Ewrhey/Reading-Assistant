@@ -1,19 +1,29 @@
 package com.artyom.readingassistant.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.util.List;
 
 /**
- * Simple DTO that holds the main pieces returned by the fetcher.
- * It can be extended later with more fields (e.g. language, wordCount).
+ * DTO for API responses. Holds both raw text and processed parts (summary, key ideas, action items).
  */
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class ArticleResult {
     private String url;
     private String title;
-    private String text;
+    private String text; // raw cleaned text
+    private List<String> summary; // top sentences
+    private List<String> keyIdeas;
+    private List<String> actionItems; // simple string form of action items
+
+    public ArticleResult(String url, String title, String text) {
+        this.url = url;
+        this.title = title;
+        this.text = text;
+    }
 
 }
