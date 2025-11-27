@@ -55,6 +55,21 @@
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>3.0.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>fontbox</artifactId>
+			<version>3.0.6</version>
+		</dependency>
+
+
+
+
 		<!-- Optional: actuator for readiness/health (useful later) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
