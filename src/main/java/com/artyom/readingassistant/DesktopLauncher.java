@@ -16,7 +16,7 @@ public class DesktopLauncher {
         PdfExporter exporter = ctx.getBean(PdfExporter.class);
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Input article URL: \n");
+        System.out.println("Input article URL: ");
         String url = scanner.nextLine();
 
         try {
@@ -24,7 +24,7 @@ public class DesktopLauncher {
             exporter.export(result);
             System.out.println("PDF created and export in \\output directory.");
         } catch (Exception e) {
-            System.err.println("Ошибка: " + e.getMessage());
+            System.err.println("Error: " + e.getMessage());
         }
     }
 }
